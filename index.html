@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fff8f0">
-  <meta name="description" content="Storybook Face Painting brings colourful, creative face painting to parties and special events.">
-  <title>Storybook Face Painting | Colourful fun for every occasion</title>
+  <meta name="theme-color" content="#fbf7f0">
+  <meta name="description" content="Emma's Storybook Face Painting adds colourful, creative face painting to parties and special events.">
+  <title>Emma’s Storybook Face Painting | Colourful fun for every occasion</title>
   <style>
     :root {
       color-scheme: light;
-      --ink: #302540;
-      --muted: #685f70;
-      --pink: #f26388;
-      --purple: #7351a6;
-      --cream: #fff8f0;
-      --mint: #dff3e8;
+      --ink: #302740;
+      --muted: #716978;
+      --pink: #d87891;
+      --purple: #65527f;
+      --cream: #fbf7f0;
+      --sage: #e9eee5;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -23,8 +23,9 @@
     .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
     header { padding: 22px 0; }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { font-weight: 800; text-decoration: none; font-size: 1.12rem; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-weight: 700; text-decoration: none; font-size: 1.12rem; }
     .brand span { color: var(--pink); }
+    .brand-mark { display: grid; place-items: center; width: 39px; height: 39px; border: 1px solid #d9cfe0; border-radius: 50%; color: var(--purple); font-size: 1.25rem; }
     nav { display: flex; align-items: center; gap: 24px; }
     nav a { text-decoration: none; font-weight: 650; font-size: .95rem; }
     nav a:hover { color: var(--purple); }
@@ -33,16 +34,16 @@
     .hero { padding: 58px 0 76px; }
     .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 42px; }
     .eyebrow { margin: 0 0 12px; color: var(--purple); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .78rem; }
-    h1 { margin: 0; max-width: 620px; font-size: clamp(2.8rem, 6vw, 5rem); letter-spacing: -.055em; line-height: 1.02; }
+    h1 { margin: 0; max-width: 620px; font-family: Georgia, serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 500; letter-spacing: -.055em; line-height: 1.02; }
     h1 span { color: var(--pink); }
     .intro { max-width: 510px; margin: 22px 0 28px; color: var(--muted); font-size: 1.12rem; }
-    .hero-art { position: relative; display: grid; place-items: center; min-height: 360px; border-radius: 48% 52% 55% 45% / 46% 43% 57% 54%; background: #f7dbe4; overflow: hidden; }
+    .hero-art { position: relative; display: grid; place-items: center; min-height: 360px; border: 1px solid #eee3e4; border-radius: 48% 52% 55% 45% / 46% 43% 57% 54%; background: #f2e5e8; overflow: hidden; }
     .hero-art::before, .hero-art::after { content: "✦"; position: absolute; color: #fff; font-size: 2.6rem; }
     .hero-art::before { top: 16%; left: 18%; transform: rotate(-15deg); }
     .hero-art::after { right: 15%; bottom: 17%; color: #ffd45f; font-size: 3rem; }
-    .face { position: relative; display: grid; place-items: center; width: 190px; height: 225px; border-radius: 48% 48% 45% 45%; background: #ffd8b8; box-shadow: 0 16px 30px #8a4c5a24; font-size: 6rem; }
-    .face::before { content: "✿"; position: absolute; top: -19px; left: -26px; color: #7351a6; font-size: 4rem; transform: rotate(-20deg); }
-    .face::after { content: "✿"; position: absolute; top: 4px; right: -29px; color: #f26388; font-size: 3.5rem; transform: rotate(18deg); }
+    .face { position: relative; display: grid; place-items: center; width: 190px; height: 225px; border: 1px solid #ecc9b4; border-radius: 48% 48% 45% 45%; background: #f4d5bf; box-shadow: 0 16px 30px #8a4c5a24; font-size: 5.4rem; }
+    .face::before { content: "✿"; position: absolute; top: -19px; left: -26px; color: var(--purple); font-size: 4rem; transform: rotate(-20deg); }
+    .face::after { content: "✿"; position: absolute; top: 4px; right: -29px; color: var(--pink); font-size: 3.5rem; transform: rotate(18deg); }
     .art-note { position: absolute; left: 8%; bottom: 12%; border-radius: 16px; padding: 10px 15px; background: #fffdf9; font-weight: 750; transform: rotate(-5deg); box-shadow: 0 8px 20px #30254012; }
     .section { padding: 70px 0; }
     .section h2 { margin: 0 0 12px; text-align: center; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -.04em; }
@@ -53,8 +54,19 @@
     .card .icon { font-size: 2rem; }
     .card h3 { margin: 12px 0 7px; font-size: 1.15rem; }
     .card p { margin: 0; color: var(--muted); }
-    .booking { padding: 64px 0; background: var(--mint); text-align: center; }
-    .booking h2 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 2.7rem); letter-spacing: -.04em; }
+    .lookbook { background: #f1ecef; }
+    .looks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .look { overflow: hidden; border: 1px solid #e6dde5; border-radius: 18px; background: #fffdf9; }
+    .look-art { display: grid; place-items: center; min-height: 190px; position: relative; overflow: hidden; font-size: 4.2rem; }
+    .look-art::before { content: ""; position: absolute; width: 126px; height: 150px; border: 1px solid #ffffff66; border-radius: 50% 50% 46% 46%; background: #ffffff24; }
+    .look-art span { position: relative; filter: drop-shadow(0 5px 2px #34233a16); }
+    .look-art.rose { background: #e9dce7; }
+    .look-art.sea { background: #d6e6e0; }
+    .look-art.space { background: #d9d3e8; }
+    .look-caption { padding: 13px 17px 16px; font-family: Georgia, serif; font-size: 1.05rem; font-weight: 700; }
+    .lookbook-link { display: block; width: fit-content; margin: 28px auto 0; color: var(--purple); font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .booking { padding: 64px 0; background: var(--sage); text-align: center; }
+    .booking h2 { margin: 0 0 10px; font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 2.7rem); font-weight: 500; letter-spacing: -.04em; }
     .booking p { margin: 0 auto 23px; max-width: 500px; color: var(--muted); }
     footer { padding: 24px 0; text-align: center; color: var(--muted); font-size: .9rem; }
     footer a { color: var(--purple); font-weight: 700; }
@@ -70,14 +82,14 @@
       .hero-art { min-height: 285px; }
       .face { transform: scale(.82); }
       .section { padding: 54px 0; }
-      .cards { grid-template-columns: 1fr; }
+      .cards, .looks { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#top">📖 Storybook <span>Face Painting</span></a>
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">❧</span><span>Emma’s Storybook<br>Face Painting</span></a>
       <nav aria-label="Main navigation">
         <a href="#about">What we do</a>
         <a href="#contact" class="button">Enquire now</a>
@@ -89,14 +101,14 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">A little colour. A lot of magic.</p>
-          <h1>Make their day <span>feel like a story.</span></h1>
-          <p class="intro">Creative face painting to bring smiles, sparkle and a touch of storybook magic to your celebration.</p>
+          <p class="eyebrow">Face painting by Emma</p>
+          <h1>Little faces, <span>big stories.</span></h1>
+          <p class="intro">Colourful, carefully painted designs to bring a little storybook magic to your party or special event.</p>
           <a class="button" href="#contact">Let's make it magical&nbsp; ✨</a>
         </div>
         <div class="hero-art" aria-label="Illustration of a smiling face with colourful flower decorations" role="img">
-          <div class="face" aria-hidden="true">😊</div>
-          <div class="art-note">Pick a design! 🎨</div>
+          <div class="face" aria-hidden="true">✿</div>
+          <div class="art-note">A little magic, painted by hand</div>
         </div>
       </div>
     </section>
@@ -104,12 +116,26 @@
     <section class="section what" id="about">
       <div class="wrap">
         <h2>Colourful fun for every occasion</h2>
-        <p class="section-lead">From tiny butterflies to brave little tigers, there's a design for every imagination.</p>
+        <p class="section-lead">A friendly, colourful touch for little celebrations and big gatherings.</p>
         <div class="cards">
           <article class="card"><div class="icon" aria-hidden="true">🎂</div><h3>Birthday parties</h3><p>Make their special day even more memorable with designs they’ll love.</p></article>
           <article class="card"><div class="icon" aria-hidden="true">🎪</div><h3>Events & celebrations</h3><p>Add a bright, playful touch to your gathering or community event.</p></article>
           <article class="card"><div class="icon" aria-hidden="true">🦋</div><h3>Imaginative designs</h3><p>Whimsical favourites and colourful creations for kids of all ages.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="section lookbook" id="designs">
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center">From Emma’s storybook</p>
+        <h2>A few favourite looks</h2>
+        <p class="section-lead">Inspired by the floral, fantasy and character designs Emma loves to paint.</p>
+        <div class="looks">
+          <article class="look"><div class="look-art rose" role="img" aria-label="Illustrated floral face paint design"><span>🌸</span></div><div class="look-caption">Dainty rose</div></article>
+          <article class="look"><div class="look-art sea" role="img" aria-label="Illustrated sea monster face paint design"><span>🐙</span></div><div class="look-caption">Sea monster</div></article>
+          <article class="look"><div class="look-art space" role="img" aria-label="Illustrated space themed face paint design"><span>🌙</span></div><div class="look-caption">Space themed</div></article>
+        </div>
+        <a class="lookbook-link" href="https://www.instagram.com/emmasstorybookfacepainting/" target="_blank" rel="noopener noreferrer">See Emma’s latest designs on Instagram ↗</a>
       </div>
     </section>
 
@@ -122,6 +148,6 @@
     </section>
   </main>
 
-  <footer><div class="wrap">© <span id="year">2026</span> Storybook Face Painting · <a href="mailto:emma@storybookfacepainting.co.uk">Get in touch</a></div></footer>
+  <footer><div class="wrap">© <span id="year">2026</span> Emma’s Storybook Face Painting · <a href="mailto:emma@storybookfacepainting.co.uk">Get in touch</a></div></footer>
 </body>
 </html>
