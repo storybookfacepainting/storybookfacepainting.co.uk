@@ -3,17 +3,125 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HTML Test Page</title>
+  <meta name="theme-color" content="#fff8f0">
+  <meta name="description" content="Storybook Face Painting brings colourful, creative face painting to parties and special events.">
+  <title>Storybook Face Painting | Colourful fun for every occasion</title>
   <style>
-    body { font: 16px/1.5 system-ui, sans-serif; margin: 3rem auto; max-width: 42rem; padding: 0 1rem; color: #263238; }
-    main { border: 1px solid #d9e2e7; border-radius: 12px; padding: 2rem; }
-    h1 { margin-top: 0; }
+    :root {
+      color-scheme: light;
+      --ink: #302540;
+      --muted: #685f70;
+      --pink: #f26388;
+      --purple: #7351a6;
+      --cream: #fff8f0;
+      --mint: #dff3e8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font: 16px/1.6 system-ui, sans-serif; }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
+    header { padding: 22px 0; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; text-decoration: none; font-size: 1.12rem; }
+    .brand span { color: var(--pink); }
+    nav { display: flex; align-items: center; gap: 24px; }
+    nav a { text-decoration: none; font-weight: 650; font-size: .95rem; }
+    nav a:hover { color: var(--purple); }
+    .button { display: inline-block; border-radius: 999px; padding: 12px 21px; background: var(--purple); color: white; text-decoration: none; font-weight: 750; box-shadow: 0 7px 18px #7351a633; }
+    .button:hover { background: #5c3d8d; transform: translateY(-1px); }
+    .hero { padding: 58px 0 76px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 42px; }
+    .eyebrow { margin: 0 0 12px; color: var(--purple); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .78rem; }
+    h1 { margin: 0; max-width: 620px; font-size: clamp(2.8rem, 6vw, 5rem); letter-spacing: -.055em; line-height: 1.02; }
+    h1 span { color: var(--pink); }
+    .intro { max-width: 510px; margin: 22px 0 28px; color: var(--muted); font-size: 1.12rem; }
+    .hero-art { position: relative; display: grid; place-items: center; min-height: 360px; border-radius: 48% 52% 55% 45% / 46% 43% 57% 54%; background: #f7dbe4; overflow: hidden; }
+    .hero-art::before, .hero-art::after { content: "✦"; position: absolute; color: #fff; font-size: 2.6rem; }
+    .hero-art::before { top: 16%; left: 18%; transform: rotate(-15deg); }
+    .hero-art::after { right: 15%; bottom: 17%; color: #ffd45f; font-size: 3rem; }
+    .face { position: relative; display: grid; place-items: center; width: 190px; height: 225px; border-radius: 48% 48% 45% 45%; background: #ffd8b8; box-shadow: 0 16px 30px #8a4c5a24; font-size: 6rem; }
+    .face::before { content: "✿"; position: absolute; top: -19px; left: -26px; color: #7351a6; font-size: 4rem; transform: rotate(-20deg); }
+    .face::after { content: "✿"; position: absolute; top: 4px; right: -29px; color: #f26388; font-size: 3.5rem; transform: rotate(18deg); }
+    .art-note { position: absolute; left: 8%; bottom: 12%; border-radius: 16px; padding: 10px 15px; background: #fffdf9; font-weight: 750; transform: rotate(-5deg); box-shadow: 0 8px 20px #30254012; }
+    .section { padding: 70px 0; }
+    .section h2 { margin: 0 0 12px; text-align: center; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -.04em; }
+    .section-lead { max-width: 570px; margin: 0 auto 34px; color: var(--muted); text-align: center; }
+    .what { background: #fffdf9; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { padding: 25px; border: 1px solid #efe7ec; border-radius: 20px; background: white; }
+    .card .icon { font-size: 2rem; }
+    .card h3 { margin: 12px 0 7px; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .booking { padding: 64px 0; background: var(--mint); text-align: center; }
+    .booking h2 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 2.7rem); letter-spacing: -.04em; }
+    .booking p { margin: 0 auto 23px; max-width: 500px; color: var(--muted); }
+    footer { padding: 24px 0; text-align: center; color: var(--muted); font-size: .9rem; }
+    footer a { color: var(--purple); font-weight: 700; }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 32px, 540px); }
+      header { padding: 16px 0; }
+      .nav { align-items: flex-start; }
+      nav { gap: 14px; }
+      nav a:not(.button) { display: none; }
+      nav .button { padding: 9px 15px; font-size: .88rem; }
+      .hero { padding: 38px 0 55px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-art { min-height: 285px; }
+      .face { transform: scale(.82); }
+      .section { padding: 54px 0; }
+      .cards { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>It works!</h1>
-    <p>This is a simple HTML test page.</p>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">📖 Storybook <span>Face Painting</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">What we do</a>
+        <a href="#contact" class="button">Enquire now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">A little colour. A lot of magic.</p>
+          <h1>Make their day <span>feel like a story.</span></h1>
+          <p class="intro">Creative face painting to bring smiles, sparkle and a touch of storybook magic to your celebration.</p>
+          <a class="button" href="#contact">Let's make it magical&nbsp; ✨</a>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a smiling face with colourful flower decorations" role="img">
+          <div class="face" aria-hidden="true">😊</div>
+          <div class="art-note">Pick a design! 🎨</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section what" id="about">
+      <div class="wrap">
+        <h2>Colourful fun for every occasion</h2>
+        <p class="section-lead">From tiny butterflies to brave little tigers, there's a design for every imagination.</p>
+        <div class="cards">
+          <article class="card"><div class="icon" aria-hidden="true">🎂</div><h3>Birthday parties</h3><p>Make their special day even more memorable with designs they’ll love.</p></article>
+          <article class="card"><div class="icon" aria-hidden="true">🎪</div><h3>Events & celebrations</h3><p>Add a bright, playful touch to your gathering or community event.</p></article>
+          <article class="card"><div class="icon" aria-hidden="true">🦋</div><h3>Imaginative designs</h3><p>Whimsical favourites and colourful creations for kids of all ages.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="contact">
+      <div class="wrap">
+        <h2>Planning something special?</h2>
+        <p>Get in touch and tell us about your event. We’d love to help make it extra colourful.</p>
+        <a class="button" href="mailto:emma@storybookfacepainting.co.uk?subject=Face%20painting%20enquiry">Email us about your event</a>
+      </div>
+    </section>
   </main>
+
+  <footer><div class="wrap">© <span id="year">2026</span> Storybook Face Painting · <a href="mailto:emma@storybookfacepainting.co.uk">Get in touch</a></div></footer>
 </body>
 </html>
