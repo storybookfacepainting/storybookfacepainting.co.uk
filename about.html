@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf8fb">
+  <meta name="description" content="Meet Emma, the face behind Emma’s Storybook Facepainting, and discover how her love of stories and creativity inspired her work.">
+  <title>About Me | Emma’s Storybook Facepainting</title>
+  <style>
+    :root { color-scheme: light; --ink: #25213a; --muted: #625d70; --plum: #594672; --rose: #d86f9d; --paper: #fffdfb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; color: var(--ink); background: #fbf8fb url("assets/swirly-background-multicolour.png") center top / cover fixed; font: 16px/1.7 system-ui, sans-serif; }
+    a { color: inherit; }
+    .wrap { width: min(1020px, calc(100% - 36px)); margin: 0 auto; }
+    header { padding: 16px 0 22px; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--plum); font: 700 1rem/1.2 Georgia, serif; text-decoration: none; }
+    .brand img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; background: white; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: var(--plum); font-size: .94rem; font-weight: 750; text-decoration: none; }
+    .nav-links a:hover { color: var(--rose); }
+    main { padding: 12px 0 48px; }
+    .about-card { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 42px; padding: 32px; border: 1px solid #ffffffbd; border-radius: 28px; background: #fffdfbed; box-shadow: 0 18px 48px #38294619; backdrop-filter: blur(8px); }
+    .portrait-wrap { position: relative; padding: 10px; border: 1px solid #e5d8e5; border-radius: 48% 48% 18px 18px; background: linear-gradient(145deg, #f2e0e9, #e4dfef 58%, #f8eddc); transform: rotate(-1deg); }
+    .portrait { display: block; width: 100%; max-height: 620px; border-radius: 46% 46% 12px 12px; object-fit: cover; object-position: center 35%; }
+    .photo-note { position: absolute; right: -17px; bottom: 22px; padding: 8px 14px; border: 1px solid #eadfe7; border-radius: 15px; background: var(--paper); color: var(--plum); font: 700 .93rem Georgia, serif; box-shadow: 0 6px 18px #38294620; transform: rotate(3deg); }
+    .eyebrow { margin: 0 0 8px; color: var(--plum); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { margin: 0 0 19px; font: 500 clamp(2.5rem, 5vw, 3.7rem)/1.05 Georgia, 'Times New Roman', serif; letter-spacing: -.04em; }
+    h1 span { color: var(--rose); }
+    .story p { margin: 0 0 15px; color: var(--muted); }
+    .story p:first-of-type { color: var(--ink); font-size: 1.08rem; }
+    .story p:last-child { margin-bottom: 0; }
+    footer { padding: 0 0 24px; color: #4f4960; font-size: .9rem; text-align: center; }
+    footer a { font-weight: 700; text-underline-offset: 3px; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 26px, 560px); }
+      header { padding-top: 10px; }
+      .brand { font-size: .91rem; }
+      .brand img { width: 45px; height: 45px; }
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: .84rem; }
+      main { padding-top: 4px; }
+      .about-card { grid-template-columns: 1fr; gap: 27px; padding: 20px; border-radius: 22px; }
+      .portrait-wrap { width: min(100%, 400px); margin: 0 auto; }
+      .portrait { max-height: 490px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="index.html"><img src="assets/emmas-storybook-logo.png" alt=""><span>Emma’s Storybook<br>Face Painting</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="https://www.instagram.com/emmasstorybookfacepainting/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <article class="about-card">
+      <div class="portrait-wrap">
+        <img class="portrait" src="assets/83eb997d-b5f4-4f61-adc6-2d1e48943602.jpg" alt="Emma wearing a playful black and white cat face-paint design">
+        <div class="photo-note">Hello, I’m Emma!</div>
+      </div>
+      <div class="story">
+        <h1>About <span>Me</span></h1>
+        <p>I’m Emma, the face behind Emma’s Storybook Facepainting!</p>
+        <p>I’m a busy mum of two who loves to get creative and always enjoy activities I can share with my children, especially when it adds a bit of magic and fun.</p>
+        <p>My facepainting journey started during maternity leave, when I combined facepainting with favourite films and storybooks (hence the name!). I love bringing children’s imagination to life, whether it’s a magical unicorn, fiery dragon, fairy princess or stomping dinosaur.</p>
+        <p>I also love to create intricate floral or vivid pattern designs for adults too, perfect for festivals, special occasions and expressing your own style.</p>
+        <p>Through Emma’s Storybook Facepainting, I hope to add a bit of excitement and fun to special occasions and parties.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="wrap">Want to add a little magic to your event? <a href="mailto:emma@storybookfacepainting.co.uk?subject=Face%20painting%20enquiry">Get in touch with Emma</a> · <a href="privacy.html">Privacy Policy</a></footer>
+</body>
+</html>

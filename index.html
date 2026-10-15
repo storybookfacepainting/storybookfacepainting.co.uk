@@ -3,151 +3,131 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbf7f0">
-  <meta name="description" content="Emma's Storybook Face Painting adds colourful, creative face painting to parties and special events.">
-  <title>Emma’s Storybook Face Painting | Colourful fun for every occasion</title>
+  <meta name="theme-color" content="#fbf8fb">
+  <meta name="description" content="Emma's Storybook Face Painting brings colourful, imaginative designs to parties and special events.">
+  <title>Emma’s Storybook Face Painting</title>
   <style>
     :root {
       color-scheme: light;
-      --ink: #302740;
-      --muted: #716978;
-      --pink: #d87891;
-      --purple: #65527f;
-      --cream: #fbf7f0;
-      --sage: #e9eee5;
+      --ink: #25213a;
+      --muted: #625d70;
+      --plum: #594672;
+      --rose: #d86f9d;
+      --paper: #fffdfb;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--cream); color: var(--ink); font: 16px/1.6 system-ui, sans-serif; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background: #fbf8fb url("assets/swirly-background-multicolour.png") center top / cover fixed;
+      font: 16px/1.6 system-ui, sans-serif;
+    }
     a { color: inherit; }
-    .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
-    header { padding: 22px 0; }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-weight: 700; text-decoration: none; font-size: 1.12rem; }
-    .brand span { color: var(--pink); }
-    .brand-mark { display: grid; place-items: center; width: 39px; height: 39px; border: 1px solid #d9cfe0; border-radius: 50%; color: var(--purple); font-size: 1.25rem; }
-    nav { display: flex; align-items: center; gap: 24px; }
-    nav a { text-decoration: none; font-weight: 650; font-size: .95rem; }
-    nav a:hover { color: var(--purple); }
-    .button { display: inline-block; border-radius: 999px; padding: 12px 21px; background: var(--purple); color: white; text-decoration: none; font-weight: 750; box-shadow: 0 7px 18px #7351a633; }
-    .button:hover { background: #5c3d8d; transform: translateY(-1px); }
-    .hero { padding: 58px 0 76px; }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 42px; }
-    .eyebrow { margin: 0 0 12px; color: var(--purple); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .78rem; }
-    h1 { margin: 0; max-width: 620px; font-family: Georgia, serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 500; letter-spacing: -.055em; line-height: 1.02; }
-    h1 span { color: var(--pink); }
-    .intro { max-width: 510px; margin: 22px 0 28px; color: var(--muted); font-size: 1.12rem; }
-    .hero-art { position: relative; display: grid; place-items: center; min-height: 360px; border: 1px solid #eee3e4; border-radius: 48% 52% 55% 45% / 46% 43% 57% 54%; background: #f2e5e8; overflow: hidden; }
-    .hero-art::before, .hero-art::after { content: "✦"; position: absolute; color: #fff; font-size: 2.6rem; }
-    .hero-art::before { top: 16%; left: 18%; transform: rotate(-15deg); }
-    .hero-art::after { right: 15%; bottom: 17%; color: #ffd45f; font-size: 3rem; }
-    .face { position: relative; display: grid; place-items: center; width: 190px; height: 225px; border: 1px solid #ecc9b4; border-radius: 48% 48% 45% 45%; background: #f4d5bf; box-shadow: 0 16px 30px #8a4c5a24; font-size: 5.4rem; }
-    .face::before { content: "✿"; position: absolute; top: -19px; left: -26px; color: var(--purple); font-size: 4rem; transform: rotate(-20deg); }
-    .face::after { content: "✿"; position: absolute; top: 4px; right: -29px; color: var(--pink); font-size: 3.5rem; transform: rotate(18deg); }
-    .art-note { position: absolute; left: 8%; bottom: 12%; border-radius: 16px; padding: 10px 15px; background: #fffdf9; font-weight: 750; transform: rotate(-5deg); box-shadow: 0 8px 20px #30254012; }
-    .section { padding: 70px 0; }
-    .section h2 { margin: 0 0 12px; text-align: center; font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -.04em; }
-    .section-lead { max-width: 570px; margin: 0 auto 34px; color: var(--muted); text-align: center; }
-    .what { background: #fffdf9; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { padding: 25px; border: 1px solid #efe7ec; border-radius: 20px; background: white; }
-    .card .icon { font-size: 2rem; }
-    .card h3 { margin: 12px 0 7px; font-size: 1.15rem; }
-    .card p { margin: 0; color: var(--muted); }
-    .lookbook { background: #f1ecef; }
-    .looks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .look { overflow: hidden; border: 1px solid #e6dde5; border-radius: 18px; background: #fffdf9; }
-    .look-art { display: grid; place-items: center; min-height: 190px; position: relative; overflow: hidden; font-size: 4.2rem; }
-    .look-art::before { content: ""; position: absolute; width: 126px; height: 150px; border: 1px solid #ffffff66; border-radius: 50% 50% 46% 46%; background: #ffffff24; }
-    .look-art span { position: relative; filter: drop-shadow(0 5px 2px #34233a16); }
-    .look-art.rose { background: #e9dce7; }
-    .look-art.sea { background: #d6e6e0; }
-    .look-art.space { background: #d9d3e8; }
-    .look-caption { padding: 13px 17px 16px; font-family: Georgia, serif; font-size: 1.05rem; font-weight: 700; }
-    .lookbook-link { display: block; width: fit-content; margin: 28px auto 0; color: var(--purple); font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-    .booking { padding: 64px 0; background: var(--sage); text-align: center; }
-    .booking h2 { margin: 0 0 10px; font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 2.7rem); font-weight: 500; letter-spacing: -.04em; }
-    .booking p { margin: 0 auto 23px; max-width: 500px; color: var(--muted); }
-    footer { padding: 24px 0; text-align: center; color: var(--muted); font-size: .9rem; }
-    footer a { color: var(--purple); font-weight: 700; }
-    @media (max-width: 720px) {
-      .wrap { width: min(100% - 32px, 540px); }
-      header { padding: 16px 0; }
-      .nav { align-items: flex-start; }
-      nav { gap: 14px; }
-      nav a:not(.button) { display: none; }
-      nav .button { padding: 9px 15px; font-size: .88rem; }
-      .hero { padding: 38px 0 55px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
-      .hero-art { min-height: 285px; }
-      .face { transform: scale(.82); }
-      .section { padding: 54px 0; }
-      .cards, .looks { grid-template-columns: 1fr; }
+    .wrap { width: min(1020px, calc(100% - 36px)); margin: 0 auto; }
+    header { padding: 16px 0 0; }
+    .nav { display: flex; justify-content: flex-end; gap: 20px; }
+    .nav a { color: var(--plum); font-size: .94rem; font-weight: 750; text-decoration: none; }
+    .nav a:hover, .instagram-link:hover { color: var(--rose); }
+    .intro { padding: 28px 0 68px; text-align: center; }
+    .logo-circle { display: grid; place-items: center; width: min(350px, 82vw); aspect-ratio: 1; margin: 0 auto 24px; overflow: hidden; border: 1px solid #ffffffd9; border-radius: 50%; background: white; box-shadow: 0 12px 32px #38294620; }
+    .logo { display: block; width: 92%; height: auto; margin: 0; mix-blend-mode: multiply; }
+    h1, h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: 500; letter-spacing: -.035em; }
+    h1 { margin: 0 auto 10px; font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.12; }
+    .lead { max-width: 660px; margin: 0 auto; color: var(--muted); font-size: 1.08rem; }
+    .intro-band { max-width: 900px; margin: 0 auto; padding: 24px 52px 26px; border-radius: 999px; background: var(--plum); color: white; box-shadow: 0 10px 26px #38294624; }
+    .intro-band h1 { color: white; }
+    .intro-band .lead { color: #f3edf8; }
+    .button { display: inline-block; margin-top: 36px; padding: 12px 21px; border-radius: 999px; background: var(--plum); color: white; font-weight: 750; text-decoration: none; box-shadow: 0 6px 18px #59467235; transition: transform .2s, background .2s; }
+    .button:hover { background: #443457; transform: translateY(-2px); }
+    .trust-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 710px; margin: 40px auto 0; }
+    .trust-badge { display: grid; flex: 0 0 128px; place-content: center; justify-items: center; aspect-ratio: 1; padding: 12px; border: 2px solid var(--plum); border-radius: 50%; background: #fffdfbeF; color: var(--plum); font-size: .84rem; font-weight: 750; line-height: 1.25; text-align: center; box-shadow: inset 0 0 0 4px #fffdfb, inset 0 0 0 5px #59467255, 0 6px 16px #38294618; }
+    .trust-badge::before { content: "✓"; display: grid; place-items: center; width: 25px; height: 25px; margin-bottom: 7px; border: 1px solid currentColor; border-radius: 50%; font-size: .9rem; }
+    .gallery { margin: 0 auto 44px; padding: 30px; border: 1px solid #ffffffb3; border-radius: 26px; background: #fffdfbe8; box-shadow: 0 18px 48px #38294616; backdrop-filter: blur(8px); }
+    .gallery-head { margin-bottom: 22px; text-align: center; }
+    h2 { margin: 0 0 5px; font-size: clamp(1.8rem, 4vw, 2.45rem); }
+    .gallery-head p { margin: 0; color: var(--muted); }
+    .photos { display: grid; grid-template-columns: repeat(3, 1fr); align-items: start; gap: 21px; padding: 8px 4px; }
+    .photo { margin: 0; padding: 8px 8px 13px; border: 1px solid #e8dfe8; border-radius: 13px; background: white; box-shadow: 0 10px 22px #38294620; transition: transform .25s, box-shadow .25s; }
+    .photo:nth-child(3n+1) { transform: rotate(-1.2deg); }
+    .photo:nth-child(3n+2) { transform: translateY(9px) rotate(1deg); }
+    .photo:nth-child(3n) { transform: rotate(-.4deg); }
+    .photo:hover { z-index: 1; transform: translateY(-4px) rotate(0); box-shadow: 0 15px 30px #3829462b; }
+    .photo img { display: block; width: 100%; aspect-ratio: 4 / 5; border-radius: 8px; object-fit: cover; }
+    .gallery-foot { margin: 20px 0 0; text-align: center; }
+    .instagram-link { color: var(--plum); font-weight: 750; text-underline-offset: 4px; }
+    footer { padding: 0 0 24px; color: #4f4960; font-size: .9rem; text-align: center; }
+    footer a { font-weight: 700; text-underline-offset: 3px; }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 26px, 520px); }
+      .nav { padding-top: 3px; }
+      .intro { padding: 10px 0 50px; }
+      .logo-circle { width: min(310px, 80vw); margin-bottom: 20px; }
+      .logo { width: 92%; }
+      .intro-band { padding: 20px 24px 22px; border-radius: 999px; }
+      .lead { font-size: 1rem; }
+      .trust-badges { margin-top: 30px; }
+      .button { margin-top: 28px; }
+      .trust-badges { max-width: 390px; gap: 12px; }
+      .trust-badge { flex-basis: 112px; padding: 10px; font-size: .82rem; }
+      .gallery { padding: 21px 16px; border-radius: 20px; }
+      .photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px 12px; }
+      .photo img { aspect-ratio: 4 / 5; }
+    }
+    @media (max-width: 420px) {
+      .photos { grid-template-columns: 1fr; gap: 17px; }
+      .photo img { aspect-ratio: 4 / 5; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">❧</span><span>Emma’s Storybook<br>Face Painting</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#about">What we do</a>
-        <a href="#contact" class="button">Enquire now</a>
-      </nav>
-    </div>
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#gallery">Gallery</a>
+      <a href="about.html">About Me</a>
+      <a href="https://www.instagram.com/emmasstorybookfacepainting/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+    </nav>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">Face painting by Emma</p>
-          <h1>Little faces, <span>big stories.</span></h1>
-          <p class="intro">Colourful, carefully painted designs to bring a little storybook magic to your party or special event.</p>
-          <a class="button" href="#contact">Let's make it magical&nbsp; ✨</a>
-        </div>
-        <div class="hero-art" aria-label="Illustration of a smiling face with colourful flower decorations" role="img">
-          <div class="face" aria-hidden="true">✿</div>
-          <div class="art-note">A little magic, painted by hand</div>
-        </div>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="welcome">
+      <div class="logo-circle">
+        <img class="logo" src="assets/emmas-storybook-logo.png" alt="Emma’s Storybook Face Painting logo: a fairy tale book with a fairy and dragon">
       </div>
+      <div class="intro-band">
+        <h1 id="welcome">Colourful face painting for little celebrations</h1>
+        <p class="lead">Emma’s Storybook Face Painting brings imaginative designs, colour and a little storybook magic to parties and special events.</p>
+      </div>
+      <div class="trust-badges" aria-label="Safety and service credentials">
+        <div class="trust-badge">Safety Risk Assessed</div>
+        <div class="trust-badge">High Quality Face Paints</div>
+        <div class="trust-badge">Insured</div>
+        <div class="trust-badge">DBS Checked</div>
+      </div>
+      <a class="button" href="enquire.html">Enquire about your event</a>
     </section>
 
-    <section class="section what" id="about">
-      <div class="wrap">
-        <h2>Colourful fun for every occasion</h2>
-        <p class="section-lead">A friendly, colourful touch for little celebrations and big gatherings.</p>
-        <div class="cards">
-          <article class="card"><div class="icon" aria-hidden="true">🎂</div><h3>Birthday parties</h3><p>Make their special day even more memorable with designs they’ll love.</p></article>
-          <article class="card"><div class="icon" aria-hidden="true">🎪</div><h3>Events & celebrations</h3><p>Add a bright, playful touch to your gathering or community event.</p></article>
-          <article class="card"><div class="icon" aria-hidden="true">🦋</div><h3>Imaginative designs</h3><p>Whimsical favourites and colourful creations for kids of all ages.</p></article>
-        </div>
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="gallery-head">
+        <h2 id="gallery-title">Gallery</h2>
       </div>
-    </section>
-
-    <section class="section lookbook" id="designs">
-      <div class="wrap">
-        <p class="eyebrow" style="text-align:center">From Emma’s storybook</p>
-        <h2>A few favourite looks</h2>
-        <p class="section-lead">Inspired by the floral, fantasy and character designs Emma loves to paint.</p>
-        <div class="looks">
-          <article class="look"><div class="look-art rose" role="img" aria-label="Illustrated floral face paint design"><span>🌸</span></div><div class="look-caption">Dainty rose</div></article>
-          <article class="look"><div class="look-art sea" role="img" aria-label="Illustrated sea monster face paint design"><span>🐙</span></div><div class="look-caption">Sea monster</div></article>
-          <article class="look"><div class="look-art space" role="img" aria-label="Illustrated space themed face paint design"><span>🌙</span></div><div class="look-caption">Space themed</div></article>
-        </div>
-        <a class="lookbook-link" href="https://www.instagram.com/emmasstorybookfacepainting/" target="_blank" rel="noopener noreferrer">See Emma’s latest designs on Instagram ↗</a>
+      <div class="photos">
+        <figure class="photo"><img src="assets/76c1503d-1a36-4e30-a41c-512a44c056f7.jpg" alt="Child with a red and black tiger stripe and football cheek design"></figure>
+        <figure class="photo"><img src="assets/00c12afb-9370-46a9-876c-32f49bff2f5e.jpg" alt="Floral face painting in bright pink, yellow and green"></figure>
+        <figure class="photo"><img src="assets/69d25b6e-9e59-4c99-82ce-a67ea5ecc18a.jpg" alt="Two children showing colourful character face paint"></figure>
+        <figure class="photo"><img src="assets/c47d3b4a-c249-4161-8c7f-228603f3af3f.jpg" alt="Smiling child with a rainbow and flower face paint design"></figure>
+        <figure class="photo"><img src="assets/c0122f83-e15a-4562-a335-926b3cb9eea4.jpg" alt="Child with a rainbow, flower and glitter face paint design"></figure>
+        <figure class="photo"><img src="assets/07725d54-1ba6-49dd-8a98-b82696cc0f9a.jpg" alt="Child with a rainbow and pink heart face paint design"></figure>
       </div>
-    </section>
-
-    <section class="booking" id="contact">
-      <div class="wrap">
-        <h2>Planning something special?</h2>
-        <p>Get in touch and tell us about your event. We’d love to help make it extra colourful.</p>
-        <a class="button" href="mailto:emma@storybookfacepainting.co.uk?subject=Face%20painting%20enquiry">Email us about your event</a>
-      </div>
+      <p class="gallery-foot"><a class="instagram-link" href="https://www.instagram.com/emmasstorybookfacepainting/" target="_blank" rel="noopener noreferrer">See more of Emma’s work on Instagram ↗</a></p>
     </section>
   </main>
 
-  <footer><div class="wrap">© <span id="year">2026</span> Emma’s Storybook Face Painting · <a href="mailto:emma@storybookfacepainting.co.uk">Get in touch</a></div></footer>
+  <footer class="wrap">Email <a href="mailto:emma@storybookfacepainting.co.uk">emma@storybookfacepainting.co.uk</a> to ask about a booking · <a href="privacy.html">Privacy Policy</a></footer>
 </body>
 </html>
